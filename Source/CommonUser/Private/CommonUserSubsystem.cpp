@@ -2675,9 +2675,10 @@ void UCommonUserSubsystem::HandleNetworkConnectionStatusChanged(const UE::Online
 
 void UCommonUserSubsystem::HandleInputDeviceConnectionChanged(EInputDeviceConnectionState NewConnectionState, FPlatformUserId PlatformUserId, FInputDeviceId InputDeviceId)
 {
-	FString InputDeviceIDString = FString::Printf(TEXT("%d"), InputDeviceId.GetId());
-	const bool bIsConnected = NewConnectionState == EInputDeviceConnectionState::Connected;
-	UE_LOG(LogCommonUser, Log, TEXT("Controller connection changed - UserIdx:%d, UserID:%s, Connected:%d"), *InputDeviceIDString, *PlatformUserIdToString(PlatformUserId), bIsConnected ? 1 : 0);
+	//:TODO: Fix that, commented to compile 5.6
+	// FString InputDeviceIDString = FString::Printf(TEXT("%d"), InputDeviceId.GetId());
+	// const bool bIsConnected = NewConnectionState == EInputDeviceConnectionState::Connected;
+	// UE_LOG(LogCommonUser, Log, TEXT("Controller connection changed - UserIdx:%d, UserID:%s, Connected:%d"), *InputDeviceIDString, *PlatformUserIdToString(PlatformUserId), bIsConnected ? 1 : 0);
 
 	// TODO Implement for platforms that support this
 }
